@@ -1,0 +1,74 @@
+let choices = ["Rock", "Paper", "Scissors"];
+
+//         // Step 1: Randomly return a value in array for computer player
+function computerChoice() {
+    let compChoice = Math.floor(Math.random() * choices.length);
+    return choices[compChoice].toLowerCase();
+}
+
+// Step 2: Get human choice 
+function getHumanChoice(humanChoice) {
+    return humanChoice.trim().toLowerCase();
+}
+
+
+// console.log("Hello World!")
+        
+
+        // Function to play game for 5 rounds
+    function playGame() {
+        // Local variable for the scores to keep track
+        let humanScore = 0, computerScore = 0;
+
+        // Function to play a round
+        function playRound(humanChoice, computerChoice) {
+            if (humanChoice === "rock" && computerChoice === "paper") {
+                alert("You lose! Paper beats Rock!");
+                computerScore += 1;
+            } else if (humanChoice === "paper" && computerChoice === "rock") {
+                alert("You win! Paper beats Rock!");
+                humanScore += 1;
+            } else if (humanChoice === "scissors" && computerChoice === "rock") {
+                alert("You lose! Rock beats Scissors!");
+                computerScore += 1;
+            } else if (humanChoice === "rock" && computerChoice === "scissors") {
+                alert("You win! Rock beats Scissors!");
+                humanScore += 1;
+            } else if (humanChoice === "paper" && computerChoice === "scissors") {
+                alert("You lose! Scissors beats Paper!");
+                computerScore += 1;
+            } else if (humanChoice === "scissors" && computerChoice === "paper") {
+                alert("You win! Scissors beats Paper!");
+                humanScore += 1;
+            } else if (humanChoice === computerChoice) {
+                alert("Tie");
+            } else {
+                alert("Invalid choice, please enter Rock, Paper, or Scissors.");
+            }
+
+            // Alert who is the winner
+            if (humanScore === 3) {
+                alert("You win! You scored 3!");
+            } else if (computerScore === 3) {
+                alert("Computer wins");
+            }
+        }
+
+        // // For loop to iterate 5 times
+        // for (let i = 1; i <= 5; i++) {
+        //     const humanSelection = getHumanChoice();
+        //     const computerSelection = computerChoice();
+
+        //     playRound(humanSelection, computerSelection);
+        //     console.log("Human Score: " + humanScore);
+        //     console.log("Computer Score: " + computerScore);
+
+        //     // Condition statement for when a player scores 3 points
+        //     if (computerScore === 3 || humanScore === 3) {
+        //         break;
+        //     }
+        // }
+    }
+        // playGame();
+
+paper = document.querySelector('#paper')
